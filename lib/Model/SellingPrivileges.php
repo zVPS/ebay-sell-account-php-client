@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class SellingPrivileges implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -184,8 +184,8 @@ class SellingPrivileges implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['seller_registration_completed'] = $data['seller_registration_completed'] ?? null;
-        $this->container['selling_limit'] = $data['selling_limit'] ?? null;
+        $this->container['seller_registration_completed'] = isset($data['seller_registration_completed']) ? $data['seller_registration_completed'] : null;
+        $this->container['selling_limit'] = isset($data['selling_limit']) ? $data['selling_limit'] : null;
     }
 
     /**
@@ -280,7 +280,7 @@ class SellingPrivileges implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

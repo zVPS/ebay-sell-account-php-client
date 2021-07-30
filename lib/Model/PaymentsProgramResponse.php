@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class PaymentsProgramResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -194,10 +194,10 @@ class PaymentsProgramResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['payments_program_type'] = $data['payments_program_type'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['was_previously_opted_in'] = $data['was_previously_opted_in'] ?? null;
+        $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
+        $this->container['payments_program_type'] = isset($data['payments_program_type']) ? $data['payments_program_type'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['was_previously_opted_in'] = isset($data['was_previously_opted_in']) ? $data['was_previously_opted_in'] : null;
     }
 
     /**
@@ -340,7 +340,7 @@ class PaymentsProgramResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

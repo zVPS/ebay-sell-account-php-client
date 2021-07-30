@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class Programs implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -179,7 +179,7 @@ class Programs implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['programs'] = $data['programs'] ?? null;
+        $this->container['programs'] = isset($data['programs']) ? $data['programs'] : null;
     }
 
     /**
@@ -250,7 +250,7 @@ class Programs implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

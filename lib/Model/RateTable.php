@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class RateTable implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -194,10 +194,10 @@ class RateTable implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['country_code'] = $data['country_code'] ?? null;
-        $this->container['locality'] = $data['locality'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['rate_table_id'] = $data['rate_table_id'] ?? null;
+        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
+        $this->container['locality'] = isset($data['locality']) ? $data['locality'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['rate_table_id'] = isset($data['rate_table_id']) ? $data['rate_table_id'] : null;
     }
 
     /**
@@ -340,7 +340,7 @@ class RateTable implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

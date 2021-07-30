@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class ShippingOption implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -209,13 +209,13 @@ class ShippingOption implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['cost_type'] = $data['cost_type'] ?? null;
-        $this->container['insurance_fee'] = $data['insurance_fee'] ?? null;
-        $this->container['insurance_offered'] = $data['insurance_offered'] ?? null;
-        $this->container['option_type'] = $data['option_type'] ?? null;
-        $this->container['package_handling_cost'] = $data['package_handling_cost'] ?? null;
-        $this->container['rate_table_id'] = $data['rate_table_id'] ?? null;
-        $this->container['shipping_services'] = $data['shipping_services'] ?? null;
+        $this->container['cost_type'] = isset($data['cost_type']) ? $data['cost_type'] : null;
+        $this->container['insurance_fee'] = isset($data['insurance_fee']) ? $data['insurance_fee'] : null;
+        $this->container['insurance_offered'] = isset($data['insurance_offered']) ? $data['insurance_offered'] : null;
+        $this->container['option_type'] = isset($data['option_type']) ? $data['option_type'] : null;
+        $this->container['package_handling_cost'] = isset($data['package_handling_cost']) ? $data['package_handling_cost'] : null;
+        $this->container['rate_table_id'] = isset($data['rate_table_id']) ? $data['rate_table_id'] : null;
+        $this->container['shipping_services'] = isset($data['shipping_services']) ? $data['shipping_services'] : null;
     }
 
     /**
@@ -430,7 +430,7 @@ class ShippingOption implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

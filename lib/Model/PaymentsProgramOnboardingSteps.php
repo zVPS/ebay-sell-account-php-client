@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class PaymentsProgramOnboardingSteps implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -189,9 +189,9 @@ class PaymentsProgramOnboardingSteps implements ModelInterface, ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['web_url'] = $data['web_url'] ?? null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['web_url'] = isset($data['web_url']) ? $data['web_url'] : null;
     }
 
     /**
@@ -310,7 +310,7 @@ class PaymentsProgramOnboardingSteps implements ModelInterface, ArrayAccess, \Js
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

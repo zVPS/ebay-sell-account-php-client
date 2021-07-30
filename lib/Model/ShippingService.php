@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -229,17 +229,17 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['additional_shipping_cost'] = $data['additional_shipping_cost'] ?? null;
-        $this->container['buyer_responsible_for_pickup'] = $data['buyer_responsible_for_pickup'] ?? null;
-        $this->container['buyer_responsible_for_shipping'] = $data['buyer_responsible_for_shipping'] ?? null;
-        $this->container['cash_on_delivery_fee'] = $data['cash_on_delivery_fee'] ?? null;
-        $this->container['free_shipping'] = $data['free_shipping'] ?? null;
-        $this->container['shipping_carrier_code'] = $data['shipping_carrier_code'] ?? null;
-        $this->container['shipping_cost'] = $data['shipping_cost'] ?? null;
-        $this->container['shipping_service_code'] = $data['shipping_service_code'] ?? null;
-        $this->container['ship_to_locations'] = $data['ship_to_locations'] ?? null;
-        $this->container['sort_order'] = $data['sort_order'] ?? null;
-        $this->container['surcharge'] = $data['surcharge'] ?? null;
+        $this->container['additional_shipping_cost'] = isset($data['additional_shipping_cost']) ? $data['additional_shipping_cost'] : null;
+        $this->container['buyer_responsible_for_pickup'] = isset($data['buyer_responsible_for_pickup']) ? $data['buyer_responsible_for_pickup'] : null;
+        $this->container['buyer_responsible_for_shipping'] = isset($data['buyer_responsible_for_shipping']) ? $data['buyer_responsible_for_shipping'] : null;
+        $this->container['cash_on_delivery_fee'] = isset($data['cash_on_delivery_fee']) ? $data['cash_on_delivery_fee'] : null;
+        $this->container['free_shipping'] = isset($data['free_shipping']) ? $data['free_shipping'] : null;
+        $this->container['shipping_carrier_code'] = isset($data['shipping_carrier_code']) ? $data['shipping_carrier_code'] : null;
+        $this->container['shipping_cost'] = isset($data['shipping_cost']) ? $data['shipping_cost'] : null;
+        $this->container['shipping_service_code'] = isset($data['shipping_service_code']) ? $data['shipping_service_code'] : null;
+        $this->container['ship_to_locations'] = isset($data['ship_to_locations']) ? $data['ship_to_locations'] : null;
+        $this->container['sort_order'] = isset($data['sort_order']) ? $data['sort_order'] : null;
+        $this->container['surcharge'] = isset($data['surcharge']) ? $data['surcharge'] : null;
     }
 
     /**
@@ -550,7 +550,7 @@ class ShippingService implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

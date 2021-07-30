@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class SetFulfillmentPolicyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -239,19 +239,19 @@ class SetFulfillmentPolicyResponse implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->container['category_types'] = $data['category_types'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['freight_shipping'] = $data['freight_shipping'] ?? null;
-        $this->container['fulfillment_policy_id'] = $data['fulfillment_policy_id'] ?? null;
-        $this->container['global_shipping'] = $data['global_shipping'] ?? null;
-        $this->container['handling_time'] = $data['handling_time'] ?? null;
-        $this->container['local_pickup'] = $data['local_pickup'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['pickup_drop_off'] = $data['pickup_drop_off'] ?? null;
-        $this->container['shipping_options'] = $data['shipping_options'] ?? null;
-        $this->container['ship_to_locations'] = $data['ship_to_locations'] ?? null;
-        $this->container['warnings'] = $data['warnings'] ?? null;
+        $this->container['category_types'] = isset($data['category_types']) ? $data['category_types'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['freight_shipping'] = isset($data['freight_shipping']) ? $data['freight_shipping'] : null;
+        $this->container['fulfillment_policy_id'] = isset($data['fulfillment_policy_id']) ? $data['fulfillment_policy_id'] : null;
+        $this->container['global_shipping'] = isset($data['global_shipping']) ? $data['global_shipping'] : null;
+        $this->container['handling_time'] = isset($data['handling_time']) ? $data['handling_time'] : null;
+        $this->container['local_pickup'] = isset($data['local_pickup']) ? $data['local_pickup'] : null;
+        $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['pickup_drop_off'] = isset($data['pickup_drop_off']) ? $data['pickup_drop_off'] : null;
+        $this->container['shipping_options'] = isset($data['shipping_options']) ? $data['shipping_options'] : null;
+        $this->container['ship_to_locations'] = isset($data['ship_to_locations']) ? $data['ship_to_locations'] : null;
+        $this->container['warnings'] = isset($data['warnings']) ? $data['warnings'] : null;
     }
 
     /**
@@ -610,7 +610,7 @@ class SetFulfillmentPolicyResponse implements ModelInterface, ArrayAccess, \Json
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

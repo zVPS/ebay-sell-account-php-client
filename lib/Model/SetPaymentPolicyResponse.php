@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class SetPaymentPolicyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -229,17 +229,17 @@ class SetPaymentPolicyResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['category_types'] = $data['category_types'] ?? null;
-        $this->container['deposit'] = $data['deposit'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['full_payment_due_in'] = $data['full_payment_due_in'] ?? null;
-        $this->container['immediate_pay'] = $data['immediate_pay'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['payment_instructions'] = $data['payment_instructions'] ?? null;
-        $this->container['payment_methods'] = $data['payment_methods'] ?? null;
-        $this->container['payment_policy_id'] = $data['payment_policy_id'] ?? null;
-        $this->container['warnings'] = $data['warnings'] ?? null;
+        $this->container['category_types'] = isset($data['category_types']) ? $data['category_types'] : null;
+        $this->container['deposit'] = isset($data['deposit']) ? $data['deposit'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['full_payment_due_in'] = isset($data['full_payment_due_in']) ? $data['full_payment_due_in'] : null;
+        $this->container['immediate_pay'] = isset($data['immediate_pay']) ? $data['immediate_pay'] : null;
+        $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['payment_instructions'] = isset($data['payment_instructions']) ? $data['payment_instructions'] : null;
+        $this->container['payment_methods'] = isset($data['payment_methods']) ? $data['payment_methods'] : null;
+        $this->container['payment_policy_id'] = isset($data['payment_policy_id']) ? $data['payment_policy_id'] : null;
+        $this->container['warnings'] = isset($data['warnings']) ? $data['warnings'] : null;
     }
 
     /**
@@ -550,7 +550,7 @@ class SetPaymentPolicyResponse implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

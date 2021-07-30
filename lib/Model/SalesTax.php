@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class SalesTax implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -194,10 +194,10 @@ class SalesTax implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['country_code'] = $data['country_code'] ?? null;
-        $this->container['sales_tax_jurisdiction_id'] = $data['sales_tax_jurisdiction_id'] ?? null;
-        $this->container['sales_tax_percentage'] = $data['sales_tax_percentage'] ?? null;
-        $this->container['shipping_and_handling_taxed'] = $data['shipping_and_handling_taxed'] ?? null;
+        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
+        $this->container['sales_tax_jurisdiction_id'] = isset($data['sales_tax_jurisdiction_id']) ? $data['sales_tax_jurisdiction_id'] : null;
+        $this->container['sales_tax_percentage'] = isset($data['sales_tax_percentage']) ? $data['sales_tax_percentage'] : null;
+        $this->container['shipping_and_handling_taxed'] = isset($data['shipping_and_handling_taxed']) ? $data['shipping_and_handling_taxed'] : null;
     }
 
     /**
@@ -340,7 +340,7 @@ class SalesTax implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

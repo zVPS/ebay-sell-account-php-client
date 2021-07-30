@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class PaymentMethod implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -189,9 +189,9 @@ class PaymentMethod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['brands'] = $data['brands'] ?? null;
-        $this->container['payment_method_type'] = $data['payment_method_type'] ?? null;
-        $this->container['recipient_account_reference'] = $data['recipient_account_reference'] ?? null;
+        $this->container['brands'] = isset($data['brands']) ? $data['brands'] : null;
+        $this->container['payment_method_type'] = isset($data['payment_method_type']) ? $data['payment_method_type'] : null;
+        $this->container['recipient_account_reference'] = isset($data['recipient_account_reference']) ? $data['recipient_account_reference'] : null;
     }
 
     /**
@@ -310,7 +310,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

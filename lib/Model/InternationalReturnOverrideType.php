@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class InternationalReturnOverrideType implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -194,10 +194,10 @@ class InternationalReturnOverrideType implements ModelInterface, ArrayAccess, \J
      */
     public function __construct(array $data = null)
     {
-        $this->container['return_method'] = $data['return_method'] ?? null;
-        $this->container['return_period'] = $data['return_period'] ?? null;
-        $this->container['returns_accepted'] = $data['returns_accepted'] ?? null;
-        $this->container['return_shipping_cost_payer'] = $data['return_shipping_cost_payer'] ?? null;
+        $this->container['return_method'] = isset($data['return_method']) ? $data['return_method'] : null;
+        $this->container['return_period'] = isset($data['return_period']) ? $data['return_period'] : null;
+        $this->container['returns_accepted'] = isset($data['returns_accepted']) ? $data['returns_accepted'] : null;
+        $this->container['return_shipping_cost_payer'] = isset($data['return_shipping_cost_payer']) ? $data['return_shipping_cost_payer'] : null;
     }
 
     /**
@@ -340,7 +340,7 @@ class InternationalReturnOverrideType implements ModelInterface, ArrayAccess, \J
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

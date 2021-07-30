@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class SetReturnPolicyResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -249,21 +249,21 @@ class SetReturnPolicyResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->container['category_types'] = $data['category_types'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
-        $this->container['extended_holiday_returns_offered'] = $data['extended_holiday_returns_offered'] ?? null;
-        $this->container['international_override'] = $data['international_override'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['refund_method'] = $data['refund_method'] ?? null;
-        $this->container['restocking_fee_percentage'] = $data['restocking_fee_percentage'] ?? null;
-        $this->container['return_instructions'] = $data['return_instructions'] ?? null;
-        $this->container['return_method'] = $data['return_method'] ?? null;
-        $this->container['return_period'] = $data['return_period'] ?? null;
-        $this->container['return_policy_id'] = $data['return_policy_id'] ?? null;
-        $this->container['returns_accepted'] = $data['returns_accepted'] ?? null;
-        $this->container['return_shipping_cost_payer'] = $data['return_shipping_cost_payer'] ?? null;
-        $this->container['warnings'] = $data['warnings'] ?? null;
+        $this->container['category_types'] = isset($data['category_types']) ? $data['category_types'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['extended_holiday_returns_offered'] = isset($data['extended_holiday_returns_offered']) ? $data['extended_holiday_returns_offered'] : null;
+        $this->container['international_override'] = isset($data['international_override']) ? $data['international_override'] : null;
+        $this->container['marketplace_id'] = isset($data['marketplace_id']) ? $data['marketplace_id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['refund_method'] = isset($data['refund_method']) ? $data['refund_method'] : null;
+        $this->container['restocking_fee_percentage'] = isset($data['restocking_fee_percentage']) ? $data['restocking_fee_percentage'] : null;
+        $this->container['return_instructions'] = isset($data['return_instructions']) ? $data['return_instructions'] : null;
+        $this->container['return_method'] = isset($data['return_method']) ? $data['return_method'] : null;
+        $this->container['return_period'] = isset($data['return_period']) ? $data['return_period'] : null;
+        $this->container['return_policy_id'] = isset($data['return_policy_id']) ? $data['return_policy_id'] : null;
+        $this->container['returns_accepted'] = isset($data['returns_accepted']) ? $data['returns_accepted'] : null;
+        $this->container['return_shipping_cost_payer'] = isset($data['return_shipping_cost_payer']) ? $data['return_shipping_cost_payer'] : null;
+        $this->container['warnings'] = isset($data['warnings']) ? $data['warnings'] : null;
     }
 
     /**
@@ -670,7 +670,7 @@ class SetReturnPolicyResponse implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

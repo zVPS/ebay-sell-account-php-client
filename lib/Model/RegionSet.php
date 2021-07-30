@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class RegionSet implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -184,8 +184,8 @@ class RegionSet implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['region_excluded'] = $data['region_excluded'] ?? null;
-        $this->container['region_included'] = $data['region_included'] ?? null;
+        $this->container['region_excluded'] = isset($data['region_excluded']) ? $data['region_excluded'] : null;
+        $this->container['region_included'] = isset($data['region_included']) ? $data['region_included'] : null;
     }
 
     /**
@@ -280,7 +280,7 @@ class RegionSet implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class KycCheck implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -199,11 +199,11 @@ class KycCheck implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['data_required'] = $data['data_required'] ?? null;
-        $this->container['due_date'] = $data['due_date'] ?? null;
-        $this->container['remedy_url'] = $data['remedy_url'] ?? null;
-        $this->container['alert'] = $data['alert'] ?? null;
-        $this->container['detail_message'] = $data['detail_message'] ?? null;
+        $this->container['data_required'] = isset($data['data_required']) ? $data['data_required'] : null;
+        $this->container['due_date'] = isset($data['due_date']) ? $data['due_date'] : null;
+        $this->container['remedy_url'] = isset($data['remedy_url']) ? $data['remedy_url'] : null;
+        $this->container['alert'] = isset($data['alert']) ? $data['alert'] : null;
+        $this->container['detail_message'] = isset($data['detail_message']) ? $data['detail_message'] : null;
     }
 
     /**
@@ -370,7 +370,7 @@ class KycCheck implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**

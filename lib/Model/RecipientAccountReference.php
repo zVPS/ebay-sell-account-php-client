@@ -45,7 +45,7 @@ use \Ebay\Sell\Account\ObjectSerializer;
  */
 class RecipientAccountReference implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = null;
+    const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
@@ -184,8 +184,8 @@ class RecipientAccountReference implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['reference_id'] = $data['reference_id'] ?? null;
-        $this->container['reference_type'] = $data['reference_type'] ?? null;
+        $this->container['reference_id'] = isset($data['reference_id']) ? $data['reference_id'] : null;
+        $this->container['reference_type'] = isset($data['reference_type']) ? $data['reference_type'] : null;
     }
 
     /**
@@ -280,7 +280,7 @@ class RecipientAccountReference implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function offsetGet($offset)
     {
-        return $this->container[$offset] ?? null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
