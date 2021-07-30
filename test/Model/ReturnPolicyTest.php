@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Ebay\Sell
+ * @package  Ebay\Sell\Account
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Ebay\Sell\Test\Model;
+namespace Ebay\Sell\Account\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description Root container that defines the fields for a seller&#39;s return policy. The &lt;b&gt;returnPolicy&lt;/b&gt; encapsulates a seller&#39;s terms for how they handle item returns, the name and description of the policy, and the marketplace and category group(s) to which the return policy is applied.  While each seller must define at least one return policy for every marketplace into which they sell, sellers can define multiple return policies for a single marketplace by specifying different configurations for the unique policies.
- * @package     Ebay\Sell
+ * @package     Ebay\Sell\Account
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */

@@ -1,4 +1,4 @@
-# Ebay\Sell\RateTableApi
+# Ebay\Sell\Account\RateTableApi
 
 All URIs are relative to https://api.ebay.com/sell/account/v1.
 
@@ -25,10 +25,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure OAuth2 access token for authorization: Authorization Code
-$config = Ebay\Sell\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Ebay\Sell\Account\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Ebay\Sell\Api\RateTableApi(
+$apiInstance = new Ebay\Sell\Account\Api\RateTableApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

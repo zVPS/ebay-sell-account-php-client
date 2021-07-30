@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Ebay\Sell
+ * @package  Ebay\Sell\Account
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Ebay\Sell\Test\Model;
+namespace Ebay\Sell\Account\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description This complex type contains the &lt;b&gt;regionIncluded&lt;/b&gt; and &lt;b&gt;regionExcluded&lt;/b&gt; fields, which indicate the areas to where the seller does and doesn&#39;t ship. &lt;p&gt;Normally a seller ships to as many areas as possible using both DOMESTIC and INTERNATIONAL shipping options, and they don&#39;t have a need to exclude any regions from their ship-to locations. Here, there&#39;s no reason to set &lt;b&gt;regionExcluded&lt;/b&gt; fields. However, it makes sense to set the &lt;b&gt;regionExcluded&lt;/b&gt; field when a seller wants to exclude a small area that&#39;s within a larger area they service. For example, suppose a seller indicates they ship &#39;Worldwide&#39;, but for some reason must exclude a specific country, or world region. &lt;p class&#x3D;\&quot;tablenote\&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Configuring the &lt;b&gt;shipToLocations&lt;/b&gt; is tricky because the &lt;b&gt;regionIncluded&lt;/b&gt; and &lt;b&gt;regionExcluded&lt;/b&gt; fields are valid in different parts of the schema and their allowable settings vary upon the context. For details on setting these fields, see &lt;a href&#x3D;\&quot;/api-docs/sell/static/seller-accounts/ht_shipping-worldwide.html#shipToLocations\&quot;&gt;&lt;/a&gt;.&lt;/p&gt;
- * @package     Ebay\Sell
+ * @package     Ebay\Sell\Account
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */

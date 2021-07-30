@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Ebay\Sell
+ * @package  Ebay\Sell\Account
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Ebay\Sell\Test\Model;
+namespace Ebay\Sell\Account\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description &lt;p&gt;This root container defines a seller&#39;s fulfillment policy for a specific marketplace and category type. Used when creating or updating a fulfillment policy, &lt;b&gt;fulfillmentPolicyRequest&lt;/b&gt; encapsulates a seller&#39;s terms for fulfilling an order and includes the shipping carriers and services used for shipment and time the seller takes to ship an order. While each seller must define at least one fulfillment policy for every marketplace into which they sell, sellers can define multiple fulfillment policies for a single marketplace by specifying different configurations for the unique policies.&lt;/p&gt; &lt;p&gt;A successful call returns a &lt;b&gt;fulfillmentPolicyId&lt;/b&gt;, plus the &lt;b&gt;Location&lt;/b&gt; response header contains the URI to the resource.&lt;/p&gt;  &lt;p&gt;Policy instructions can be localized by providing a locale in the &lt;code&gt;Content-Language&lt;/code&gt; HTTP request header. For example: &lt;code&gt;Content-Language: de-DE&lt;/code&gt;.&lt;/p&gt;   &lt;p class&#x3D;\&quot;tablenote\&quot;&gt;&lt;b&gt;Tip: &lt;/b&gt;For more on using business policies, see &lt;a href&#x3D;\&quot;/api-docs/sell/static/seller-accounts/business-policies.html\&quot;&gt;eBay business policies&lt;/a&gt;.&lt;/p&gt;
- * @package     Ebay\Sell
+ * @package     Ebay\Sell\Account
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */

@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Ebay\Sell
+ * @package  Ebay\Sell\Account
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Ebay\Sell\Test\Model;
+namespace Ebay\Sell\Account\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description A complex type that defines the available shipping services offered in the parent &lt;b&gt;shippingOptions&lt;/b&gt; container. The shipping services specified here must be able to accommodate the &lt;b&gt;optionType&lt;/b&gt; defined in the parent &lt;b&gt;shippingOption&lt;/b&gt; container (either DOMESTIC or INTERNATIONAL). &lt;p class&#x3D;\&quot;tablenote\&quot;&gt;&lt;b&gt;Tip:&lt;/b&gt; For more on setting up shipping services, see &lt;a href&#x3D;\&quot;/api-docs/sell/static/seller-accounts/ht_shipping-free.html#shippingServices\&quot;&gt;Setting the shipping carrier and shipping service values&lt;/a&gt;.&lt;/p&gt;
- * @package     Ebay\Sell
+ * @package     Ebay\Sell\Account
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */

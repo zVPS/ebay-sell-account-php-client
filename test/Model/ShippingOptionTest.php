@@ -5,7 +5,7 @@
  * PHP version 7.2
  *
  * @category Class
- * @package  Ebay\Sell
+ * @package  Ebay\Sell\Account
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Ebay\Sell\Test\Model;
+namespace Ebay\Sell\Account\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description This complex type defines a seller&#39;s shipping configuration for either a &lt;code&gt;DOMESTIC&lt;/code&gt; or &lt;code&gt;INTERNATIONAL&lt;/code&gt; shipping option. &lt;br&gt;&lt;br&gt;Shipping options configure the high-level settings for shipments, such as flat-rate or calculated shipping, and any rate tables the seller wants to associate with the policy. &lt;br&gt;&lt;br&gt;Each &lt;b&gt;shippingOption&lt;/b&gt; element has a &lt;b&gt;shippingServices&lt;/b&gt; container that defines the list of shipping carriers and services that are available for the parent shipping option (that is, for either DOMESTIC or INTERNATIONAL shipping). If a seller offers an international shipping option, they must also offer a domestic shipping option. &lt;br&gt;&lt;br&gt;Note that &lt;b&gt;costType&lt;/b&gt; (&lt;code&gt;FLAT_RATE&lt;/code&gt; or &lt;code&gt;CALCULATED&lt;/code&gt;) is set in &lt;b&gt;shippingOptions&lt;/b&gt; and that all associated shipping services must be able to support this cost type.
- * @package     Ebay\Sell
+ * @package     Ebay\Sell\Account
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
